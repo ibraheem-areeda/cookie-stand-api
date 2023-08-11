@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="space-y-8 p-8">
+
+    <h1 class="text-4xl text-center">All the cookie_stands</h1>
+    <div>
+      {% for x in cookie_stands %}
+        <a href="{% url 'CookieStand_detail' x.pk %}" aria-current="true"
+           class="block w-full px-4 py-4 text-white bg-blue-700 border-b border-gray-200 rounded-t-lg cursor-pointer dark:bg-gray-800 dark:border-gray-600">
+          {{ x.location }}
+        </a>
+      {% endfor %}
+    </div>
+
+  </div>
+
+{% endblock content %}
